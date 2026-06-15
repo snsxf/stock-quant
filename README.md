@@ -85,7 +85,7 @@ stock-quant signals TSLA
 
 ## 在 Trae 中作为 MCP Server 使用
 
-stock-quant 内置 17 个 MCP 工具，可在 Trae 等支持 MCP 协议的 AI IDE 里直接调用。
+stock-quant 内置 21 个 MCP 工具，可在 Trae 等支持 MCP 协议的 AI IDE 里直接调用。
 
 ### 1. 启动 FutuOpenD（建议常驻）
 
@@ -115,7 +115,7 @@ stock-quant 内置 17 个 MCP 工具，可在 Trae 等支持 MCP 协议的 AI ID
 }
 ```
 
-### 3. 可用工具一览（17 个）
+### 3. 可用工具一览（21 个）
 
 | 类别 | 工具 | 说明 |
 | --- | --- | --- |
@@ -129,6 +129,7 @@ stock-quant 内置 17 个 MCP 工具，可在 Trae 等支持 MCP 协议的 AI ID
 | 板块 | `sector_analysis` | 标的所属概念板块 + 同板块成分股 |
 | 选股 | `screen_stocks` | 富途条件选股（市值/PE/动量） |
 | 行情深度 | `order_book` | 实时买卖盘档位 |
+| 异动 | `capital_anomaly` / `derivatives_anomaly` / `technical_anomaly` / `full_anomaly_scan` | 资金/衍生品/技术面异动信号（对齐富途三件套）+ 全维度扫描 |
 
 详细参数见 `src/stock_quant/mcp_server.py` 中各 `@mcp.tool()` 函数 docstring。
 
