@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "stock-quant": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "/Users/bytedance/codes/my_quant/stock-quant",
+        "stock-quant-mcp"
+      ],
+      "env": {
+        "FUTU_HOST": "127.0.0.1",
+        "FUTU_PORT": "11111",
+        "FUTU_RSA_FILE": ""
+      }
+    }
+  }
+}

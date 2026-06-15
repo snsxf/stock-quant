@@ -1,0 +1,59 @@
+[project]
+name = "stock-quant"
+version = "0.1.0"
+description = "Reusable quant toolkit for HK/US/A stocks & options"
+readme = "README.md"
+authors = [
+    { email = "shixiaofei.99@bytedance.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "yfinance>=0.2.50",
+    "requests-cache>=1.2",
+    "requests-ratelimiter>=0.7",
+    "pyrate-limiter>=3.7",
+    "futu-api>=9.2.5308",
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "scipy>=1.13",
+    "ta>=0.11.0",
+    "mibian>=0.1.3",
+    "matplotlib>=3.8",
+    "plotly>=5.20",
+    "praw>=7.7",
+    "feedparser>=6.0",
+    "finnhub-python>=2.4",
+    "requests>=2.32",
+    "httpx>=0.27",
+    "python-dotenv>=1.0",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    "loguru>=0.7",
+    "mcp[cli]>=1.2.0",
+    "akshare>=1.18.62",
+]
+
+[project.scripts]
+stock-quant = "stock_quant.cli:main"
+stock-quant-mcp = "stock_quant.mcp_server:main"
+
+[project.optional-dependencies]
+dev = [
+    "jupyterlab>=4.2",
+    "ipywidgets>=8.1",
+    "pytest>=8.2",
+    "ruff>=0.5",
+    "mypy>=1.10",
+]
+nlp = [
+    "transformers>=4.42",
+    "torch>=2.3",
+]
+
+[build-system]
+requires = ["uv_build>=0.11.11,<0.12.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
