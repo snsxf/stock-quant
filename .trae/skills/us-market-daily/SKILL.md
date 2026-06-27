@@ -187,7 +187,7 @@ MU, APP, SNDK, NASA, ASTS, CEG, BE, MRVL, AVGO, VRT, INTC, TSM, LITE, AAPL, GS, 
 | AAPL | Apple | Mag7 | 关注 Apple Intelligence / 中国 iPhone 销售 |
 | GS | Goldman Sachs | 投行 / XLF | 利率敏感，IPO 复苏代理 |
 | AXTI | AXT Inc | III-V 化合物半导体 | 小盘高波动，与 InP/GaAs 周期 |
-| **SOXL** | **3× 半导体多头 ETF** | 杠杆 | ⚠️ 杠杆 ETF，必须强调"不可隔夜大持仓"，路径依赖损耗 |
+| **SOXL** | **3× 半导体多头 ETF** | 杠杆 | ⚠️ 杠杆 ETF：真实风险是**2-3倍放大的回撤/爆仓**，而非"必然磨损"。每日复利在单边趋势市是增益、在震荡市才是拖累（拖累量级 ≈ 0.5·L·(L-1)·σ²·天数，由标的波动率决定）。判断持有与否看标的趋势方向 + 波动率，禁止只用"路径损耗"一刀切劝退 |
 | SPMO | Invesco S&P 动量 ETF | 因子 | 动量因子 vs SPY 跟踪误差监控 |
 | GLD | SPDR 黄金 ETF | 避险 | 与 DXY 反向 + 央行购金主题 |
 
