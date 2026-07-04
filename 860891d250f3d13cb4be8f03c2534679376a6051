@@ -1,0 +1,129 @@
+.trae/skills/hk-ipo-analysis/SKILL.md
+  s_a74b61a0861aee::t_e38d279c10d580 1-189 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a3fd9a28c9b186699916855","tool_type":"agent","tool_id":"Shell","line_ranges":[{"Range":[1,189]}]}]}
+.trae/skills/us-market-daily/SKILL.md
+  s_a74b61a0861aee::t_e38d279c10d580 190 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a3fd9a28c9b186699916855","tool_type":"agent","tool_id":"Shell","line_ranges":[{"Single":190}]}]}
+.trae/skills/investment-router/SKILL.md
+  s_a74b61a0861aee::t_e38d279c10d580 195,284-300 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a3fd9a28c9b186699916855","tool_type":"agent","tool_id":"Shell","line_ranges":[{"Single":195},{"Range":[284,300]}]}]}
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "860891d250f3d13cb4be8f03c2534679376a6051",
+  "prompts": {},
+  "sessions": {
+    "s_a74b61a0861aee": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a2580a2df76c3e0c8a7a92c",
+        "model": "openrouter-2o__dev",
+        "display_model_name": "openrouter-2o"
+      },
+      "human_author": "ByteDance <shixiaofei.99@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {
+    ".trae/skills/hk-ipo-analysis/SKILL.md": [
+      {
+        "hash": "s_a74b61a0861aee::t_e38d279c10d580",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              189
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a3fd9a28c9b186699916855",
+            "tool_type": "agent",
+            "tool_id": "Shell",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  189
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    ".trae/skills/investment-router/SKILL.md": [
+      {
+        "hash": "s_a74b61a0861aee::t_e38d279c10d580",
+        "line_ranges": [
+          {
+            "Single": 195
+          },
+          {
+            "Range": [
+              284,
+              300
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a3fd9a28c9b186699916855",
+            "tool_type": "agent",
+            "tool_id": "Shell",
+            "line_ranges": [
+              {
+                "Single": 195
+              },
+              {
+                "Range": [
+                  284,
+                  300
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    ".trae/skills/us-market-daily/SKILL.md": [
+      {
+        "hash": "s_a74b61a0861aee::t_e38d279c10d580",
+        "line_ranges": [
+          {
+            "Single": 190
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a3fd9a28c9b186699916855",
+            "tool_type": "agent",
+            "tool_id": "Shell",
+            "line_ranges": [
+              {
+                "Single": 190
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "remote_transcripts": {
+    "s_a74b61a0861aee": {
+      "tool": "trae",
+      "conversation_id": "6a2580a2df76c3e0c8a7a92c",
+      "session_id": "6a2580a2df76c3e0c8a7a92c",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_a74b61a0861aee::t_e38d279c10d580": {
+      "tool": "trae",
+      "conversation_id": "6a2580a2df76c3e0c8a7a92c",
+      "session_id": "6a2580a2df76c3e0c8a7a92c",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    }
+  }
+}
