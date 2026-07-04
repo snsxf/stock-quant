@@ -127,81 +127,63 @@ description: "作为投资分析中枢的子路径，处理美股大盘、宏观
 - 工业 / 国防：LMT / RTX / NOC / GE
 - **中国 AI 算力链海外映射**（项目记忆强相关）：NVDA / AMD / TSM / AVGO 是 A 股工业富联 / 澜起 / 沪电 / 新易盛 的直接前导信号
 
-### Layer 5：重点关注股池（用户定制版 v1.1）
+### Layer 5：重点关注股池（用户定制版 v1.5 — 2026-07-01 更新）
 
 #### A. 用户当前持仓（Holdings — 必须每日扫描，含 P&L 视角）
+
+**列表按权重降序排列**（第一位权重最高）：
 ```
-NVDA, GOOGL, ARM, MSFT, META, AMD, TSEM, SATS, MSTR, TLT, RKLB, OXY, VIX
+NVDA, GOOGL, DRAM, AVGO, MSFT, META, SNDK, MRVL, SPCX
 ```
 
-| Ticker | 全称 | 类别 | 特殊处理规则 |
-|--------|------|------|-------------|
-| NVDA | NVIDIA | 半导体核心 / Mag7 | AI 算力链总龙头，财报夜（5/28）IV crush 警示 |
-| GOOGL | Alphabet | Mag7 / AI 软件 | 关注反垄断进展 + Gemini / 搜索广告分化 |
-| ARM | Arm Holdings | 半导体 / IP | 高 PE，IV 高，Beta 大；与 SoftBank 持股动态联动 |
-| MSFT | Microsoft | Mag7 / AI 软件 | OpenAI 商业化进度 + Azure AI 增速 |
-| META | Meta Platforms | Mag7 / 广告 | Reality Labs 烧钱 vs Reels 变现 |
-| AMD | AMD | 半导体 / GPU 二号位 | MI350/MI400 节奏，AI 服务器份额 |
-| **TSEM** | **Tower Semiconductor** | 半导体 / 模拟 / 代工 | ⚠️ 流动性弱，需查 spread；当 Intel-TSEM 收购曾流产历史背景 |
-| **SATS** | **EchoStar** | 卫星通信 | ⚠️ 高波动 + 债务重组主题，关注与 RKLB / ASTS 联动 |
-| **MSTR** | **MicroStrategy** | 加密代理 | 与 BTC/IBIT/COIN 同步看，溢价 / 折价 NAV 跟踪 |
-| **TLT** | **iShares 20+Y Treasury** | 长债 ETF | 与 10Y/30Y 收益率反向；宏观对冲；查久期风险 |
-| **RKLB** | **Rocket Lab** | 太空 / 国防 | Neutron 进度 + 收购 Mynaric，与 SATS / ASTS 同板块 |
-| **OXY** | **Occidental Petroleum** | 能源 | Buffett 持股；与 WTI Beta 高相关；CCS 业务催化剂 |
-| **VIX** | **CBOE 波动率指数（用户交易其期权）** | 风险对冲 / 期权策略 | ⚠️ VIX 现货不可交易；用户实际交易 **VIX 期权（VIX options，根的是 VIX 期货 `VX!`，而非 VIX 现货）**。**必须输出 VIX 现货 + VX 期货前 5 个月期限结构 + ATM IV / IVRank + Put-Call Ratio + 用户头寸的 Δ/Vega/Theta 暴露**。注意 VIX 期权结算特殊（AM-settled，三周三 8:30 ET 用 SOQ 结算），**不可错把 VIX 现货 IV 套到 VIX 期权**——VIX 期权波动率应看 VVIX。 |
+| # | Ticker | 全称 | 类别 | 特殊处理规则 |
+|---|--------|------|------|-------------|
+| 1 | **NVDA** | NVIDIA | 半导体核心 / Mag7 / GPU 龙头 | AI 算力链总龙头；财报夜 IV crush 警示；**硬止损锚 192.13**（跌破减仓 50%） |
+| 2 | **GOOGL** | Alphabet | Mag7 / AI 软件 / GCP 云 | 关注反垄断进展 + Gemini / 搜索广告分化；GCP 属"Hyperscaler 双身份"，Meta 出租算力事件后可能跟进 |
+| 3 | **DRAM** | **Roundhill Memory ETF** ✅ | 半导体 / 存储主题 ETF（**真实标的**） | ✅ **Futu OpenD 已确认真身**：US.DRAM = Roundhill 发行的存储主题 ETF（2025+ 发行的新品，训练记忆不覆盖，禁止用记忆判断）。**分析时直接查 US.DRAM 报价 + 技术面**，配合底层重仓（MU / 三星 ADR / 海力士 ADR / SNDK）做联动。禁止再当作"陌生 ticker"或"用户昵称"处理。 |
+| 4 | **AVGO** | Broadcom | 半导体 / ASIC 龙头 / Mag7 边缘 | Google TPU / Meta 自研 ASIC 定制芯片供应商；相对 NVDA 抗跌（Meta 出租算力事件中 -1.94% vs NVDA -1.57%）；PE 60x 高估值敏感 |
+| 5 | **MSFT** | Microsoft | Mag7 / AI 软件 / Azure 双身份 | OpenAI 商业化进度 + Azure AI 增速；Copilot 变现；**Azure 潜在跟进算力出租** = 双身份估值机会 |
+| 6 | **META** | Meta Platforms | Mag7 / 广告 + **算力出租** 双引擎 | ⭐ 2026-07-01 事件重估：从"最大 GPU 买方"变为"GPU 供应商"，商业模式重定价；关注 Reality Labs 烧钱 vs Reels 变现 + 出租收入分部披露 |
+| 7 | **SNDK** | SanDisk | 闪存 / NAND | 2025 从西部数据分拆 IPO，注意流动性；与 HBM/DRAM 主题弱相关；⚠️ **不要与 DRAM 混淆分类**（NAND ≠ DRAM，SNDK 是 NAND） |
+| 8 | **MRVL** | Marvell | 定制 ASIC / 互联 / 光模块 | AVGO 之外的 ASIC 第二名；AI 交换机与光模块受益；与 AVGO 存在**份额博弈**（客户订单排他） |
+| 9 | **SPCX** | **Space Exploration Technologies Corp (SpaceX)** ✅ | 太空 / 商业航天 / AI 垂直整合 | ✅ **已 IPO 上市**：SpaceX 于 **2026-06-12** 在纳斯达克上市，ticker = SPCX，发行价 $135，首日收盘 $160.95（+19.22%），IPO 募资 $75B（史上最大），估值 $1.77T。**分析时直接查 US.SPCX 报价 + 技术面**，配合 DXYZ / RKLB / ASTS 作板块 Beta 参照。禁止再当作"未上市"或"清盘 ETF"处理（此判断源于 2023 年过时训练记忆，已违反 §2 硬约束）。 |
 
 **🔧 持仓特殊处理规则**：
-1. 每只持仓必须显式给出"当前位置 vs MA20 / MA50"，并标注是否触发"破位硬止损"
-2. **TLT**：与利率联动，必须同步给出 10Y/30Y 数值变化（不能只看股价）
-3. **VIX 期权**（用户实际持仓）：
-   - 标的根基：**VIX 期权根的是 VIX 期货合约（VX1!/VX2!...）**，每个到期月对应一根 VIX 期货
-   - 必出三件套：① **VIX 现货** ② **VX 期货 1-5 月期限结构**（contango / backwardation） ③ **VVIX**（VIX 期权的隐含波动率）
-   - **VIX 期权 IV 必须用 VVIX，不能套用 SPY 期权 IV 体系**
-   - **结算特殊**：到期日为标的月份的"第三个周三前 30 天"那个周三，AM-settle 用 SOQ
-   - **均值回归 Beta**：VIX 现货长期均值 ~19，超过 25 必给"卖 Call/Put 收割"思路；低于 14 必给"买 Call 抗黑天鹅"思路
-   - **报告中标注用户头寸的方向**（多 Call / 多 Put / Spread / Short vol / Calendar）
-4. **MSTR**：必须算 mNAV (= 市值 / 持有 BTC 市值)，溢价 > 2.0 警告，< 1.2 价值
-5. **TSEM / SATS / RKLB**：流动性较弱，期权链稀薄，**禁止裸买深 OTM**
-6. **OXY**：原油 Beta 1.5+，必须给 WTI 当日价 + 库存日历
 
-#### B. 用户兴趣观察池（Watchlist — 按需启用，每日跑 DirectionScore）
+1. **每只持仓必须显式给出"当前位置 vs MA20 / MA50"**，并标注是否触发"破位硬止损"
+2. **NVDA 硬止损**：跌破 192.13 强制减仓 50%（项目记忆持续锚点）
+3. **半导体主线权重高**：NVDA / AVGO / MRVL / SNDK / DRAM 五只均属半导体或存储，**总持仓半导体敞口约占 5/9 ≈ 55%**，一旦触发"SOXX 单日 ≥ 5%"或"SMH 破 20MA"等主线信号，必须给"整仓 Beta 冲击"总量估算，禁止只看单股
+4. **DRAM = Roundhill Memory ETF**（v1.7 修正）：真实 ticker，Cboe BZX 上市 2026-04-02，AUM ~$24B，重仓 Samsung / SK Hynix / Micron / SNDK / Kioxia / WDC / STX；分析时**直接查 US.DRAM**，配合底层原厂做联动
+5. **SPCX = SpaceX 正股**（v1.7 修正）：真实 ticker，2026-06-12 IPO，Nasdaq 上市，发行价 $135；分析时**直接查 US.SPCX**，配合 DXYZ / RKLB / ASTS 做板块 Beta 参照
+6. **⚠️ 训练记忆红线**：涉及 2025-08 之后新发行/新上市的产品（DRAM / SPCX / RAM 等），**必须先跑 OpenD 或 WebSearch 验证**，禁止用"我记得 2023 年 XX 已清盘 / XX 未上市"这类**过时训练记忆**判断——这条已经违反过两次，教训见 v1.7
+7. **AVGO + MRVL 相关性**：两者均为 ASIC 玩家，客户订单存在替代关系，**净敞口 = |AVGO 权重 - MRVL 权重|**（对冲后剩余），不能简单相加
+8. **META 双引擎特别监测**：算力出租收入分部披露前，每次财报季必须查是否有"Compute Rental / Infrastructure Services"新分部；出租收入 > $5B 年化 = 强利好，< $1B = 逻辑证伪
+9. **不再持仓的老标的清单归档**（v1.4 前旧持仓）：ARM / AMD / TSEM / SATS / MSTR / TLT / RKLB / OXY / VIX 已于 2026-07-01 从 Holdings 清出。**新版分析不再默认扫描这些标的**；但若用户明确询问，仍可查询报价并给上下文
+
+#### B. 用户兴趣观察池（Watchlist — v1.5 精简为 2 只，按需启用）
+
+**列表**：
 ```
-MU, APP, SNDK, NASA, ASTS, CEG, BE, MRVL, AVGO, VRT, INTC, TSM, LITE, AAPL, GS, AXTI, SOXL, SPMO, GLD
+TSM, AAPL
 ```
 
-| Ticker | 全称 | 主线 | 备注 |
-|--------|------|------|------|
-| MU | Micron | HBM3E / DRAM | 与 NVDA / AVGO BOM 强联动 |
-| APP | AppLovin | AdTech / AI 广告 | 高 Beta，财报杀手 |
-| SNDK | SanDisk | 闪存 / NAND | 2025 从西部数据分拆 IPO，注意流动性 |
-| **NASA** | **Tema Space Innovators ETF (NYSEARCA: NASA)** | **太空主题 ETF** | ⚠️ ETF AUM、前十大持仓、SpaceX/SPV 权重、溢价/折价、IPO 催化必须实时查基金官网/ETF.com/公告，禁止沿用历史权重；若已持 RKLB/SATS/ASTS，需检查重复暴露 |
-| **ASTS** | **AST SpaceMobile** | 卫星宽带 / NASA ETF 核心成分候选 | 与 RKLB / SATS / NASA ETF 同板块 Beta 极高；实际 ETF 权重必须实时查询；**手机直连卫星**主题；财报夜 IV crush 警告 |
-| CEG | Constellation Energy | 核电 / AI 数据中心电力 | 与 VST / NRG / OKLO 同板块 |
-| BE | Bloom Energy | 燃料电池 / 数据中心电力 | 高 Beta，AI 配套 |
-| MRVL | Marvell | 定制 ASIC / 互联 | AVGO 之外的 ASIC 第二名 |
-| AVGO | Broadcom | Mag7 边缘 / ASIC 龙头 | Google TPU / Meta 自研 ASIC |
-| VRT | Vertiv | 数据中心散热 / 配电 | AI 配套黄金股，与沪电/工业富联映射 |
-| INTC | Intel | 半导体老大哥 | 18A 进度 + 政府投资催化剂 |
-| TSM | TSMC | 半导体代工龙头 | A 股算力链最强前导 |
-| LITE | Lumentum | 光模块 / 激光 | 与新易盛/中际旭创海外映射 |
-| AAPL | Apple | Mag7 | 关注 Apple Intelligence / 中国 iPhone 销售 |
-| GS | Goldman Sachs | 投行 / XLF | 利率敏感，IPO 复苏代理 |
-| AXTI | AXT Inc | III-V 化合物半导体 | 小盘高波动，与 InP/GaAs 周期 |
-| **SOXL** | **3× 半导体多头 ETF** | 杠杆 | ⚠️ 杠杆 ETF：真实风险是**2-3倍放大的回撤/爆仓**，而非"必然磨损"。每日复利在单边趋势市是增益、在震荡市才是拖累（拖累量级 ≈ 0.5·L·(L-1)·σ²·天数，由标的波动率决定）。判断持有与否看标的趋势方向 + 波动率，禁止只用"路径损耗"一刀切劝退 |
-| SPMO | Invesco S&P 动量 ETF | 因子 | 动量因子 vs SPY 跟踪误差监控 |
-| GLD | SPDR 黄金 ETF | 避险 | 与 DXY 反向 + 央行购金主题 |
+| # | Ticker | 全称 | 主线 | 备注 |
+|---|--------|------|------|------|
+| 1 | **TSM** | TSMC 台积电 | 半导体代工龙头 | A 股算力链最强前导信号；给 NVDA/AMD/AVGO/MRVL 全部代工；52w 高 479 关注回踩支撑；**从持仓端出，进观察池 = 用户认为已充分间接暴露（AVGO+MRVL+NVDA 都是 TSM 客户）** |
+| 2 | **AAPL** | Apple | Mag7 / 消费电子 | 关注 Apple Intelligence / 中国 iPhone 销售；相对 Mag7 其它成员**独立性强**（无 GPU 云业务，不受 Meta 算力出租直接冲击）；2026-07-01 盘中 +2.13% 意外独强 |
 
-**🔧 太空主题专项规则**（NASA + ASTS + RKLB + SATS 联动板块）：
-- 每次输出必须给"太空板块涨跌表"：**NASA / ASTS / RKLB / SATS / PL / LUNR / FLY**
-- 关注 **SpaceX IPO / 融资 / 二级 SPV 重估时间窗**：必须实时查 Polymarket/新闻/基金公告，不得写死月份
-- **NASA ETF 溢价/折价跟踪**：必须实时查 IOPV / NAV / 基金官网；溢价 > 3% 警告抢筹过热
-- **避免重复加仓**：若已持 RKLB/SATS/ASTS，再买 NASA 可能等于变相加仓；重复暴露比例必须实时按 ETF 最新持仓计算
+**🔧 观察池处理规则**：
+1. 观察池只跑 DirectionScore + 报价快照，**不占用 5.A 持仓深扫的分析额度**
+2. TSM 与 NVDA/AVGO/MRVL 强相关（BOM 上游），当 TSM 破位 20MA 时，持仓端所有半导体股必须给二次冲击评估
+3. AAPL 作为持仓组合的"非 AI Capex 对照锚"，帮助判断当日下跌是**板块问题**还是**大盘系统问题**
 
 #### C. 输出时的优先级规则
 1. **Holdings 区段**永远显示在 Watchlist 之前
 2. 持仓部分必须给"今日盈亏温度计"（红 / 黄 / 绿）和"是否触发硬规则止损 / 移动止盈"
-3. Watchlist 部分跑 DirectionScore Top N（N = 用户问题中提及的，默认 5）
-4. **Mag7 / 半导体板块表**自动从持仓 + 观察池中抽取交集（NVDA / GOOGL / MSFT / META / AMD / AVGO / TSM / MU / MRVL / INTC / ARM / TSEM / VRT / LITE / AAPL）
+3. **Holdings 显示顺序按权重降序**（用户 v1.5 已明确排序：NVDA > GOOGL > DRAM > AVGO > MSFT > META > SNDK > MRVL > SPCX）
+4. Watchlist 部分跑 DirectionScore Top N（N = 用户问题中提及的，默认 2 即全池）
+5. **Mag7 / 半导体板块表**自动从持仓 + 观察池中抽取交集（NVDA / GOOGL / MSFT / META / AVGO / MRVL / SNDK / TSM / AAPL）
+6. **DRAM / SPCX 均为真实 ticker**（v1.7 修正）：DRAM = Roundhill Memory ETF（2026-04-02 上市），SPCX = SpaceX 正股（2026-06-12 IPO）；**直接查 US.DRAM / US.SPCX 报价**，禁止再用"数据缺口"或"用户昵称"处理
 
 #### D. 每只标的必查 6 字段：
 | 字段 | 说明 |
@@ -247,18 +229,19 @@ MU, APP, SNDK, NASA, ASTS, CEG, BE, MRVL, AVGO, VRT, INTC, TSM, LITE, AAPL, GS, 
 - 政策黑天鹅清单
 
 ## 五、重点股票池
-### 5.A 持仓全扫（Holdings — 13 只）
+### 5.A 持仓全扫（Holdings — 9 只，按权重排序）
 - 表格：Ticker / 现价 / 当日 % / vs MA20 / vs MA50 / RSI14 / DirectionScore / 是否触发止损 / 操作建议
-### 5.B 观察池打分（Watchlist — 18 只，DirectionScore 排序）
+### 5.B 观察池打分（Watchlist — 2 只，DirectionScore 排序）
 - Top Bullish 3 + Top Bearish 3
 - 对最强多/空票自动跑期权策略
-### 5.C 特殊标的快照
-- **VIX 期权三件套**：① VIX 现货 ② VX 期货 1-5 月期限结构（contango/backwardation） ③ VVIX（VIX 期权 IV）；附用户头寸 Δ/Vega/Theta
-- **MSTR mNAV**（市值/BTC 持仓市值）+ BTC 现价
-- **TLT vs 10Y/30Y 收益率**（联动检查）
-- **OXY vs WTI**（原油 Beta 检查）
-- **太空板块**：NASA ETF / ASTS / RKLB / SATS / PL / LUNR / FLY（含 SpaceX IPO 倒计时）
-- **MAG7 + 半导体交集表**：NVDA / GOOGL / MSFT / META / AMD / AVGO / TSM / MU / MRVL / INTC / ARM / TSEM / VRT / LITE / AAPL
+### 5.C 特殊标的快照（v1.5 精简，聚焦当前 9 只持仓 + 2 只观察）
+- **META 双引擎监测**：广告收入增速 + **算力出租收入分部披露**（若已披露，给年化 run-rate；若未披露，给管理层沟通线索）
+- **AVGO vs MRVL ASIC 份额博弈**：给 Google TPU / Meta 自研 ASIC / Amazon Trainium 三大客户的最新订单归属
+- **DRAM = Roundhill Memory ETF**：真实 ticker，直接查 US.DRAM 报价 + 技术面，配合底层重仓（Samsung / SK Hynix / MU / SNDK）做联动分析
+- **SPCX = SpaceX 正股**（2026-06-12 Nasdaq IPO）：真实 ticker，直接查 US.SPCX 报价 + 技术面，配合 DXYZ / RKLB / ASTS 做板块 Beta 参照
+- **SNDK NAND vs DRAM 分类澄清**：SNDK 是 NAND 闪存，不要混入 DRAM 主题
+- **NVDA 硬止损锚 192.13**：每日必查（跌破减仓 50%）
+- **MAG7 + 半导体交集表**：NVDA / GOOGL / MSFT / META / AVGO / MRVL / SNDK / TSM / AAPL（持仓+观察池交集）
 
 ## 六、总结评分卡
 | 维度 | 评分 1-10 | 说明 |
@@ -343,4 +326,20 @@ MU, APP, SNDK, NASA, ASTS, CEG, BE, MRVL, AVGO, VRT, INTC, TSM, LITE, AAPL, GS, 
 - v1.2 2026-05-26 修正 VIX→VIX 期权交易逻辑（VX 期货+VVIX，区别 VXX）；NASA→Tema Space Innovators ETF（含 ASTS/RKLB/SATS 重仓），ASTS 独立列出；新增"太空板块"快照
 - v1.3 2026-05-26 新增硬约束 #11（MCP 不可用必须立即提醒重启，禁止用缓存/记忆装实时）+ #12（休市日必须用日历校验，禁用记忆，Memorial Day=5月最后周一）
 - **v1.4 2026-05-28 项目迁移**：从 `/Users/bytedance/Documents/trae_projects/test/.trae/skills/` 迁入 `stock-quant` 项目；跨链路径已更新
+- **v1.5 2026-07-01 持仓换仓大改**：
+  - Holdings 从 13 只精简为 9 只：`NVDA, GOOGL, DRAM, AVGO, MSFT, META, SNDK, MRVL, SPCX`（按权重降序）
+  - Watchlist 从 18 只精简为 2 只：`TSM, AAPL`
+  - 清仓归档：ARM / AMD / TSEM / SATS / MSTR / TLT / RKLB / OXY / VIX
+  - 新持仓：DRAM（用户声明存储 ETF，⚠️ 待澄清 ticker）、SNDK（NAND）、MRVL（ASIC 二号）、SPCX（用户声明 SpaceX 代理，⚠️ SpaceX 未上市，待澄清工具）
+  - 新增 DRAM / SPCX 数据缺口硬提示规则
+  - 5.C 特殊标的快照重写，去掉 VIX 三件套 / MSTR mNAV / TLT / OXY / 太空板块（对应持仓已清空），新增 META 双引擎监测 + AVGO vs MRVL ASIC 博弈
+- **v1.6 2026-07-02 昵称映射修正（后被 v1.7 推翻）**：错误地把 DRAM/SPCX 认成用户自定义昵称，实际上两者都是真实 ticker
+- **v1.7 2026-07-02 训练记忆红线事件**（⚠️ **重大教训**）：
+  - **触发**：用户质疑"SPCX 6.12 已上市，你为什么用清盘 ETF 判断，是不是违反了禁止用过时训练数据规则？"
+  - **根因**：训练数据截止 2025-08，之后发生的两大事件均未覆盖：
+    1. **DRAM = Roundhill Memory ETF**（2026-04-02 上市，Cboe BZX，AUM $24B，重仓三星/海力士/美光）
+    2. **SPCX = SpaceX 正股**（2026-06-12 Nasdaq IPO，发行价 $135，首日收盘 $160.95，估值 $1.77T，史上最大 IPO）
+  - **v1.5 和 v1.6 均违反 §2 硬约束**：拿 2023 年"Tuttle SPAC ETF 已清盘 / SpaceX 未上市"的记忆装 2026 年现实
+  - **修正**：Holdings 第 3/9 行改为真实 ticker 定义；持仓规则 #4/#5 更新为直接查 US.DRAM / US.SPCX；**新增规则 #6 训练记忆红线**（2025-08 后新品必须先跑 OpenD 或 WebSearch 验证）
+  - **教训（永久约束）**：**任何"某标的已清盘/未上市/不存在"的判断，必须先跑 OpenD get_quote 验证有无实时报价 + WebSearch 验证最新 IPO/退市公告**，禁止直接用训练记忆下结论
 - 维护者：用户 + Claude（每月一次校准 macro 日历窗口）
